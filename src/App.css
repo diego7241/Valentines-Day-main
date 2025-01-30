@@ -1,83 +1,100 @@
+/* Container general para la pantalla de la pregunta */
 .valentine-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  padding: 0 15px;
+  /* Espaciado para que no se sobrepase en pantallas pequeñas */
 }
 
-/* Custom class for Yes button styles */
+/* Botón Yes */
 .yes-button {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: 'Cambria', 'Cochin', 'Georgia', 'Times', 'Times New Roman', serif;
   background-color: #a7efb8;
-  /* bg-green-500 */
   color: #fff;
-  /* text-white */
   font-weight: bold;
-  /* font-bold */
-  padding: 8px 16px;
-  /* py-2 px-4 */
-  border-radius: 8px;
-  /* rounded */
+  padding: 12px 24px;
+  /* Mayor espacio para mayor área clickeable */
+  border-radius: 12px;
   margin-right: 8px;
-  /* mr-4 */
+  margin-bottom: 15px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
 }
 
 .yes-button:hover {
   background-color: #4f7457;
-  /* hover:bg-green-700 */
+  transform: scale(1.05);
+  /* Efecto de ampliación */
 }
 
-/* Custom class for No button styles */
+.yes-button:focus {
+  outline: none;
+  /* Elimina el borde de enfoque */
+}
+
+/* Botón No */
 .no-button {
   background-color: #c90d0d;
-  /* bg-red-500 */
   color: #fff;
-  /* text-white */
   font-weight: bold;
-  /* font-bold */
-  padding: 8px 16px;
-  /* py-2 px-4 */
-  border-radius: 8px;
-  /* rounded */
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
 }
 
 .no-button:hover {
   background-color: #c82333;
-  /* hover:bg-red-700 */
+  transform: scale(1.05);
+  /* Efecto de ampliación */
 }
 
-/* Custom class for text-4xl my-4 container */
+.no-button:focus {
+  outline: none;
+}
+
+/* Estilo para los textos */
 .text-container {
-  font-size: 2.25rem;
-  /* Equivalent to text-4xl in tailwindcss */
+  font-size: 2rem;
+  /* Un tamaño más equilibrado */
   margin-top: 1rem;
-  /* Equivalent to my-4 in tailwindcss */
   margin-bottom: 1rem;
-  /* Equivalent to my-4 in tailwindcss */
+  text-align: center;
+  /* Centrar el texto */
+  color: #333;
+  /* Mejora la legibilidad */
 }
 
+/* Centrado de la pantalla */
 .centered-container {
   display: flex;
   font-size: large;
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Times New Roman', Times, serif;
   flex-direction: column;
-  align-items: right;
-  justify-content: right;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   margin: 0;
+  text-align: center;
+  /* Asegura que todo esté centrado */
 }
 
-.github-link {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: #007bff;
-  /* Set the color as needed */
-  text-decoration: none;
+/* Añadir padding y centrado para la pregunta */
+.valentine-container img {
+  width: 80%;
+  /* Hacer la imagen más flexible */
+  max-width: 400px;
+  /* Máximo tamaño para que no sea demasiado grande */
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-/*scroll bar starts*/
+/* Mejora del scrollbar */
 *::-webkit-scrollbar {
   height: 10px;
   width: 10px;
@@ -86,21 +103,11 @@
 *::-webkit-scrollbar-track {
   border-radius: 5px;
   background-color: #DCE7E1;
-  border: 6px double #FFFFFF;
-}
-
-*::-webkit-scrollbar-track:hover {
-  background-color: #FCC5DF;
-}
-
-*::-webkit-scrollbar-track:active {
-  background-color: #FCC5DF;
 }
 
 *::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background-color: #CF3E6E;
-  border: 2px double #FFFFFF;
 }
 
 *::-webkit-scrollbar-thumb:hover {
@@ -111,4 +118,100 @@
   background-color: #FC4985;
 }
 
-/*scroll bar ends*/
+/* Media Queries */
+@media screen and (max-width: 768px) {
+
+  .yes-button,
+  .no-button {
+    padding: 10px 20px;
+    /* Reducir el padding en pantallas más pequeñas */
+    font-size: 16px;
+  }
+
+  .text-container {
+    font-size: 1.8rem;
+    /* Tamaño adecuado para pantallas medianas */
+  }
+
+  .valentine-container img {
+    width: 90%;
+    /* Hacer la imagen más pequeña en pantallas pequeñas */
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .yes-button,
+  .no-button {
+    padding: 10px 15px;
+    font-size: 14px;
+    /* Ajustar aún más el tamaño de la fuente */
+  }
+
+  .text-container {
+    font-size: 1.5rem;
+    /* Reducir un poco más el tamaño de texto */
+  }
+
+  .valentine-container img {
+    width: 95%;
+  }
+}
+
+
+
+
+
+/* Estilo para el contenedor del reproductor de música */
+.audio-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Estilo personalizado para el reproductor de audio */
+.audio-player {
+  width: 80%;
+  max-width: 400px;
+  /* Limitar el tamaño máximo */
+  border-radius: 8px;
+  /* Bordes redondeados */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Sombra para darle efecto */
+  display: none;
+  /* Hacerlo visible solo cuando se presione Reproducir */
+}
+
+/* Botones de control (Reproducir / Pausar) */
+.controls {
+  margin-top: 20px;
+}
+
+.control-button {
+  background-color: #FF69B4;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+  margin: 10px;
+}
+
+.control-button:hover {
+  background-color: #FF1493;
+  transform: scale(1.1);
+}
+
+.control-button:focus {
+  outline: none;
+}
+
+/* Estilo del texto debajo del reproductor */
+.text-container {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 10px;
+  font-family: 'Pacifico', cursive;
+}
